@@ -1,0 +1,82 @@
+# Project: mindgraphics
+# Makefile created by Dev-C++ 5.5.3
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = libgraphics/exceptio.o libgraphics/genlib.o libgraphics/graphics.o libgraphics/linkedlist.o libgraphics/random.o libgraphics/simpio.o libgraphics/strlib.o simpleGUI/imgui.o codes/blankdrawing.o codes/CanvasRect.o codes/color.o codes/filehandling_menu.o codes/filehandling_open.o codes/filehandling_save.o codes/main.o codes/template_menu.o codes/templiate_fishbone.o codes/templiate_logicgraphic.o codes/templiate_structgraphic.o
+LINKOBJ  = libgraphics/exceptio.o libgraphics/genlib.o libgraphics/graphics.o libgraphics/linkedlist.o libgraphics/random.o libgraphics/simpio.o libgraphics/strlib.o simpleGUI/imgui.o codes/blankdrawing.o codes/CanvasRect.o codes/color.o codes/filehandling_menu.o codes/filehandling_open.o codes/filehandling_save.o codes/main.o codes/template_menu.o codes/templiate_fishbone.o codes/templiate_logicgraphic.o codes/templiate_structgraphic.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib32" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -L"./libgraphics" -L"./simpleGUI" -mwindows -m32 -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"./libgraphics" -I"./simpleGUI"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.7.1/include/c++" -I"./libgraphics" -I"./simpleGUI"
+BIN      = mindgraphics.exe
+CXXFLAGS = $(CXXINCS) -m32 -g3
+CFLAGS   = $(INCS) -m32 -g3
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+libgraphics/exceptio.o: libgraphics/exceptio.c
+	$(CC) -c libgraphics/exceptio.c -o libgraphics/exceptio.o $(CFLAGS)
+
+libgraphics/genlib.o: libgraphics/genlib.c
+	$(CC) -c libgraphics/genlib.c -o libgraphics/genlib.o $(CFLAGS)
+
+libgraphics/graphics.o: libgraphics/graphics.c
+	$(CC) -c libgraphics/graphics.c -o libgraphics/graphics.o $(CFLAGS)
+
+libgraphics/linkedlist.o: libgraphics/linkedlist.c
+	$(CC) -c libgraphics/linkedlist.c -o libgraphics/linkedlist.o $(CFLAGS)
+
+libgraphics/random.o: libgraphics/random.c
+	$(CC) -c libgraphics/random.c -o libgraphics/random.o $(CFLAGS)
+
+libgraphics/simpio.o: libgraphics/simpio.c
+	$(CC) -c libgraphics/simpio.c -o libgraphics/simpio.o $(CFLAGS)
+
+libgraphics/strlib.o: libgraphics/strlib.c
+	$(CC) -c libgraphics/strlib.c -o libgraphics/strlib.o $(CFLAGS)
+
+simpleGUI/imgui.o: simpleGUI/imgui.c
+	$(CC) -c simpleGUI/imgui.c -o simpleGUI/imgui.o $(CFLAGS)
+
+codes/blankdrawing.o: codes/blankdrawing.c
+	$(CC) -c codes/blankdrawing.c -o codes/blankdrawing.o $(CFLAGS)
+
+codes/CanvasRect.o: codes/CanvasRect.c
+	$(CC) -c codes/CanvasRect.c -o codes/CanvasRect.o $(CFLAGS)
+
+codes/color.o: codes/color.c
+	$(CC) -c codes/color.c -o codes/color.o $(CFLAGS)
+
+codes/filehandling_menu.o: codes/filehandling_menu.c
+	$(CC) -c codes/filehandling_menu.c -o codes/filehandling_menu.o $(CFLAGS)
+
+codes/filehandling_open.o: codes/filehandling_open.c
+	$(CC) -c codes/filehandling_open.c -o codes/filehandling_open.o $(CFLAGS)
+
+codes/filehandling_save.o: codes/filehandling_save.c
+	$(CC) -c codes/filehandling_save.c -o codes/filehandling_save.o $(CFLAGS)
+
+codes/main.o: codes/main.c
+	$(CC) -c codes/main.c -o codes/main.o $(CFLAGS)
+
+codes/template_menu.o: codes/template_menu.c
+	$(CC) -c codes/template_menu.c -o codes/template_menu.o $(CFLAGS)
+
+codes/templiate_fishbone.o: codes/templiate_fishbone.c
+	$(CC) -c codes/templiate_fishbone.c -o codes/templiate_fishbone.o $(CFLAGS)
+
+codes/templiate_logicgraphic.o: codes/templiate_logicgraphic.c
+	$(CC) -c codes/templiate_logicgraphic.c -o codes/templiate_logicgraphic.o $(CFLAGS)
+
+codes/templiate_structgraphic.o: codes/templiate_structgraphic.c
+	$(CC) -c codes/templiate_structgraphic.c -o codes/templiate_structgraphic.o $(CFLAGS)
